@@ -1,0 +1,208 @@
+﻿
+@{
+    ViewData["Title"] = "ListProduct";
+}
+<!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <div class="breadcrumb__option">
+                            <a  asp-controller="Home" asp-action="Index">Trang chủ</a>
+                            <a class="breakcumA" asp-controller="Product" asp-action="ListProduct" asp-route-gender="@ViewBag.BreakcumA">@ViewBag.BreakcumA</a>
+                            @if(@ViewBag.BreakcumB != null){
+                            <span class="breakcumB">@ViewBag.BreakcumB</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+<!-- Product Section Begin -->
+    <section class="product spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-5">
+                    <div class="sidebar">
+                        
+                        <div class="sidebar__item">
+                            <h4>Giá</h4>
+                            <div class="price-range-wrap">
+                                <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
+                                    data-min="0" data-max="100000000">
+                                    <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
+                                    <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                                    <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                                </div>
+                                <div class="range-slider">
+                                    <div class="price-input">
+                                        <input type="text" id="minamount" class="change_amount">
+                                        <input type="text" id="maxamount" class="change_amount">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sidebar__item sidebar__item__color--option">
+                            <h4>Màu sắc</h4>
+                            <div class="sidebar__item__color sidebar__item__color--white">
+                                <label for="white" class="label_color" id="label_color_while">
+                                    <input type="radio" id="white" value="trắng">
+                                </label>
+                            </div>
+                            <div class="sidebar__item__color sidebar__item__color--yellow">
+                                <label for="yellow" class="label-color" id="label_color_yellow">
+                                    <input type="radio" id="yellow" value="vàng">
+                                </label>
+                            </div>
+                            <div class="sidebar__item__color sidebar__item__color--red">
+                                <label for="red" class="label-color" id ="label_color_red">
+                                    <input type="radio" id="red" value="đỏ">
+                                </label>
+                            </div>
+                            <div class="sidebar__item__color sidebar__item__color--black">
+                                <label for="black" class="label-color" id ="label_color_black">
+                                    <input type="radio" id="black" value="đen">
+                                </label>
+                            </div>
+                            <div class="sidebar__item__color sidebar__item__color--blue">
+                                <label for="blue" class="label-color" id ="label_color_blue">
+                                    <input type="radio" id="blue" value="xanh dương">
+                                </label>
+                            </div>
+                            <div class="sidebar__item__color sidebar__item__color--green">
+                                <label for="green" class="label-color" id ="label_color_green">
+                                    <input type="radio" id="green" value="xanh lá">
+                                </label>
+                            </div>
+                            
+                        </div>
+                        <div class="sidebar__item">
+                            <h4>Kích cỡ</h4>
+                            <div class="sidebar__item__size">
+                                <label class="lbl_size" id="lbl_size_35">
+                                    35
+                                    <input type="radio">
+                                </label>
+                            </div>
+                            <div class="sidebar__item__size">
+                                <label class="lbl_size" id="lbl_size_36">
+                                    36
+                                    <input type="radio" >
+                                </label>
+                            </div>
+                            <div class="sidebar__item__size">
+                                <label class="lbl_size" id="lbl_size_37">
+                                    37
+                                    <input type="radio" >
+                                </label>
+                            </div>
+                            <div class="sidebar__item__size">
+                                <label class="lbl_size" id="lbl_size_38">
+                                    38
+                                    <input type="radio" >
+                                </label>
+                            </div>
+                            <div class="sidebar__item__size">
+                                <label class="lbl_size" id="lbl_size_39">
+                                    39
+                                    <input type="radio" >
+                                </label>
+                            </div>
+                            <div class="sidebar__item__size">
+                                <label class="lbl_size" id="lbl_size_40">
+                                    40
+                                    <input type="radio" >
+                                </label>
+                            </div>
+                            <div class="sidebar__item__size">
+                                <label class="lbl_size" id="lbl_size_41">
+                                    41
+                                    <input type="radio" >
+                                </label>
+                            </div>
+                            <div class="sidebar__item__size">
+                                <label class="lbl_size" id="lbl_size_42">
+                                    42
+                                    <input type="radio" >
+                                </label>
+                            </div>
+                            <div class="sidebar__item__size">
+                                <label class="lbl_size" id="lbl_size_43">
+                                    43
+                                    <input type="radio" >
+                                </label>
+                            </div>
+                            <div class="sidebar__item__size">
+                                <label class="lbl_size" id="lbl_size_44">
+                                    44
+                                    <input type="radio" >
+                                </label>
+                            </div>
+                            <div class="sidebar__item__size">
+                                <label class="lbl_size" id="lbl_size_45">
+                                    45
+                                    <input type="radio" >
+                                </label>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-7">
+                    <div class="filter__item">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-5">
+                                <div class="filter__sort">
+                                    <span>Sắp xếp</span>
+                                    <select>
+                                        <option value="0">Mặc định</option>
+                                        <option value="0">Mặc định</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="filter__found">
+                                    <h6><span class="product_quanity">@ViewBag.ListProductSize</span> sản phẩm được tìm thấy</h6>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-3">
+                                <div class="filter__option">
+                                    <span class="icon_grid-2x2"></span>
+                                    <span class="icon_ul"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row list_product">
+                        @foreach(var item in ViewBag.ListProduct){
+                        <div class="col-lg-4 col-md-6 col-sm-6 product_container">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="@item.MainImg">
+                                    <ul class="product__item__pic__hover">
+                                        <li><a asp-controller="Product" asp-action="ProductDetail" asp-route-id="@item.ProductId"><i class="fa fa-retweet"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6><a asp-controller="Product" asp-action="ProductDetail" asp-route-id="@item.ProductId">@item.ProductName</a></h6>
+                                    <h5>@(item.Price)đ</h5>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                    <div class="product__pagination">
+                        <a href="#">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Section End -->
+

@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewData["Title"] = "Checkout";
+}
+<!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <div class="breadcrumb__option">
+                            <a asp-controller="Home" asp-action="Index">Trang chủ</a>
+                            <span>Thanh toán</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+<!-- Checkout Section Begin -->
+    <section class="checkout spad">
+        <div class="container">
+            
+            <div class="checkout__form">
+                <h4>Thông tin giao hàng</h4>
+                <form name="orderForm" method="post" asp-controller="Checkout" asp-action="DoCheckout">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-6">
+                            <div class="checkout__input form-group">
+                                <p>Tên<span>*</span></p>
+                                <input type="text" class="form-control" placeholder="Nhập tên" value="@(ViewBag.User.Name)" name="ReceiveName"/>
+                            </div>
+                           <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="checkout__input form-group">
+                                        <p>Số điện thoại<span>*</span></p>
+                                        <input type="text" class="form-control" placeholder="Nhập số điện thoại" value="@(ViewBag.User.PhoneNumber)" name="Phone"/>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="checkout__input form-group">
+                                        <p>Email<span></span></p>
+                                        <input type="text" class="form-control" placeholder="Nhập email"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkout__input form-group">
+                                <p>Địa chỉ<span>*</span></p>
+                                <input type="text" placeholder="Tên đường, tòa nhà, số nhà" class="form-control" name="Address"/>
+                                
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="checkout__input form-group">
+                                        <p>Tỉnh/Thành phố<span>*</span></p>
+                                        <input type="text" placeholder="Nhập tên tỉnh/thành phố" class="form-control" name="Province"/>
+                                     </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="checkout__input form-group">
+                                        <p>Quận/Huyện<span>*</span></p>
+                                        <input type="text" placeholder="Nhập tên quận/huyện" class="form-control" name="District"/>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="checkout__input form-group">
+                                        <p>Phường/Xã<span>*</span></p>
+                                        <input type="text" placeholder="Nhập tên phường/xã" class="form-control" name="Homlet"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkout__input form-group">
+                                <p>Lời nhắn<span></span></p>
+                                <input type="text"
+                                    placeholder="Nhập lời nhắn" name="Message" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="checkout__order">
+                                <h4>Đơn hàng</h4>
+                                <div class="checkout__order__products">Sản phẩm <span>Tổng</span></div>
+                                <ul>
+                                    @for (int i =0; i< ViewBag.ListCartItem.Count;i++){
+                                    <li>@ViewBag.ListCartItem[i].ProductName  <span>@(@ViewBag.ListCartItem[i].Price * @ViewBag.ListCart[i].Quantity)đ</span></li>
+                                    }
+                                </ul>
+                                <div class="checkout__order__subtotal">Tổng tiền <span>@(ViewBag.TotalPrice)đ</span></div>
+                                <div class="checkout__voucher">
+                                    <input type="text" class="voucher" placeholder="Nhập mã giảm giá">
+                                </div>
+                                <div class="checkout__order__total">Tổng thanh toán <span>@(ViewBag.TotalPrice)đ</span></div>
+                                <input type="hidden" value="@(ViewBag.TotalPrice)" name="TotalPrice"/>
+                                <button type="submit" class="site-btn">Đặt hàng</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Checkout Section End -->
+
+

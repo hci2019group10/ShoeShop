@@ -1,0 +1,147 @@
+﻿
+@{
+    ViewData["Title"] = "ProductDetail";
+}
+<!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <div class="breadcrumb__option">
+                            <a  asp-controller="Home" asp-action="Index">Trang chủ</a>
+                            <a href="./index.html">@ViewBag.Detail.Gender</a>
+                            <a href="./index.html"></a>
+                            <span> @ViewBag.Detail.ProductName</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+ <!-- Product Details Section Begin -->
+    <section class="product-details spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="product__details__pic">
+                        <div class="product__details__pic__item">
+                            <img class="product__details__pic__item--large"
+                                src="@ViewBag.Detail.MainImg" alt="">
+                        </div>
+                        <div class="product__details__pic__slider owl-carousel">
+                            <img data-imgbigurl="@ViewBag.Detail.Img1"
+                                src="@ViewBag.Detail.Img1" alt="">
+                            <img data-imgbigurl="@ViewBag.Detail.Img2"
+                                src="@ViewBag.Detail.Img2" alt="">
+                            <img data-imgbigurl="@ViewBag.Detail.Img3"
+                                src="@ViewBag.Detail.Img3" alt="">
+                            <img data-imgbigurl="@ViewBag.Detail.Img3"
+                                src="@ViewBag.Detail.Img3" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="product__details__text">
+                        <h3>@ViewBag.Detail.ProductName</h3>
+                        <div class="product__details__rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                            <span>(18 đánh giá)</span>
+                        </div>
+                        <div class="product__details__price">@ViewBag.Detail.Price đ</div>
+                        <p>- Màu sắc: @ViewBag.Detail.Color</p>
+                        <div class="size">
+                            <p>- Kích thước: </p>
+                            <div class="size_item">
+                                <span>32</span>
+                                <span>32</span>
+                                <span>32</span>
+                            </div>
+                        </div>
+                        <pc class="sellout">- Còn hàng: Còn *n* sản phẩm</pc>
+                        </div>
+                        
+                        <a onclick="addToCart(  @ViewBag.Detail.ProductId )" class="primary-btn add-to-cart">Thêm vào giỏ hàng</a>
+                        <ul>
+                            <li><b>Vận chuyển</b> <span>Trong 1 ngày <samp></samp></span></li>
+                        </ul>
+                        <h6>Có thể bạn thích</h6>
+                        <div class="product_relative">
+                            <div class="col-lg-4 product_container">
+                                <div class="product__item">
+                                    <div class="product__item__pic set-bg" data-setbg="http://img.mwc.com.vn/giay-thoi-trang?&w=450&h=450&FileInput=//Upload/2020/02/84528813-176342960295985-3914722502571458560-n.jpg">
+                                        <ul class="product__item__pic__hover">
+                                            <li><a asp-controller="Product" asp-action="ProductDetail" asp-route-id=""><i class="fa fa-retweet"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="product__item__text">
+                                        <h6><a asp-controller="Product" asp-action="ProductDetail" asp-route-id="">aaaaaa</a></h6>
+                                        <h5>1000000đ</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 product_container">
+                                <div class="product__item">
+                                    <div class="product__item__pic set-bg" data-setbg="http://img.mwc.com.vn/giay-thoi-trang?&w=450&h=450&FileInput=//Upload/2020/02/84528813-176342960295985-3914722502571458560-n.jpg">
+                                        <ul class="product__item__pic__hover">
+                                            <li><a asp-controller="Product" asp-action="ProductDetail" asp-route-id=""><i class="fa fa-retweet"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="product__item__text">
+                                        <h6><a asp-controller="Product" asp-action="ProductDetail" asp-route-id="">aaaaaa</a></h6>
+                                        <h5>1000000đ</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 product_container">
+                                <div class="product__item">
+                                    <div class="product__item__pic set-bg" data-setbg="http://img.mwc.com.vn/giay-thoi-trang?&w=450&h=450&FileInput=//Upload/2020/02/84528813-176342960295985-3914722502571458560-n.jpg">
+                                        <ul class="product__item__pic__hover">
+                                            <li><a asp-controller="Product" asp-action="ProductDetail" asp-route-id=""><i class="fa fa-retweet"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="product__item__text">
+                                        <h6><a asp-controller="Product" asp-action="ProductDetail" asp-route-id="">aaaaaa</a></h6>
+                                        <h5>1000000đ</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="product__details__tab">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"
+                                    aria-selected="true">Mô tả</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab"
+                                    aria-selected="false">Nhận xét <span>(1)</span></a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                                <div class="product__details__tab__desc">
+                                    <h6>Mô tả</h6>
+                                    <p>@ViewBag.Detail.Discription</p>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-pane" id="tabs-2" role="tabpanel">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Details Section End -->
+
